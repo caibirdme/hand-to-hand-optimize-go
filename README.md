@@ -113,7 +113,10 @@ Now open your terminal and run `go tool pprof http://localhost:9876/debug/pprof/
 Mostly you have to wait for 30s to see the output because pprof need time to do the sampling.The output maybe look like:
 ![go tool pprof](img/pprof2.png)
 
-Input `help` if you don't know what to do now.The most important command in pprof is `top x`(x is a number and default 10).
+*Tip: Input `help` if you don't know what to do*
+
+One of the most important commands in pprof is `top x`(x is a number and default 10).
+
 ![pprof3](img/pprof3.png)
 
 * `flat`: How much time was spent to run the function which is showed in the last column.
