@@ -99,7 +99,9 @@ Our demo is listening on the port *9876*,so let's generate some requests for tha
 
 Our server is very busy now and we can see some information via browser.
 Input `localhost:9876/debug/pprof` you will see:
+
 ![pprof page](img/pprof1.png)
+
 The information in this page can't help you find the bottleneck or the bug directly.
 * If you think your system is not as fast as you expect, see `localhost:9876/debug/pprof/profile`.
 * If you want to optimize the memory, see `localhost:9876/debug/pprof/heap`
