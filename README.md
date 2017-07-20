@@ -93,7 +93,7 @@ Our demo is listening on the port *9876*,so let's generate some requests for tha
 
 * `-c400` means we have 400 connections to keep open
 * `-t8` means we use 8 threads to build requests
-* `-d5m` means the duration of the test is 5 minutes
+* `-d5m` means the duration of the test will last for 5 minutes
 
 #### pprof
 
