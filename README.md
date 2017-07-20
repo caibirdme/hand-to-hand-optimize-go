@@ -73,7 +73,7 @@ Then you can run `go run main.go` to start the server.
 
 ## Mock Requests
 
-Actually, to optimize your system you should know the bottleneck of it thus you need put the server into a very busy condition just as in production.That's what [wrk](https://github.com/wg/wrk) does.
+Actually, to optimize your system you should know the bottleneck of it therefore you need put the server into a very busy condition just as in production.That's what [wrk](https://github.com/wg/wrk) does.
 
 For more detail about the `wrk`,see its [github page](https://github.com/wg/wrk)
 
