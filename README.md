@@ -251,7 +251,7 @@ And from `wrk`, we have a huge improvement! Surprise!
 
 And it may be something like this:
 
-![flame](img/torch.svg)
+![flame](img/torch.png)
 
 Each colored rectangle stands for a function.The longer the rectangle is, the more time it costs.
 
