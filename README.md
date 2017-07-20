@@ -119,12 +119,14 @@ One of the most important commands in pprof is `top x`(x is a number and default
 
 ![pprof3](img/pprof3.png)
 
+The report of `top 10` is divided into six rows
 * `flat`: How much time was spent to run the function which is showed in the last column.
 * `cum`: How much time was spend to run the function and functions invoked by it.
+* `sum%`: sum%(line(i)) = flat%(line(i)) + sum%(line(i-1))
 
 *The latest output from pprof is different from what you maybe learned before from [Profiling Go Programs](https://blog.golang.org/profiling-go-programs), but it doesn't matter*
 
-And I think you may guess the meaning of other fields.
+You can dope out the meaning of other fields.
 
 ### Analyse
 
