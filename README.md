@@ -1,8 +1,8 @@
 # Tutorial for optimizing golang program
 
-There're lots of powerful tools for optimizing golang program and some of those you may have already known but still don't use it.So let's get started from a very simple demo code,the `main.go`
+There're lots of powerful tools for optimizing golang program and some of those you may have already known but still not used it.So let's get start from a very simple demo,the `main.go`
 
-*Follow the article and change the `main.go` yourself*
+*Follow the article and change the `main.go` yourself when needed*
 
 But first of all let's have a glimse of it:
 
@@ -57,15 +57,17 @@ func genSomeBytes() *bytes.Buffer {
 }
 ```
 
-you must import the `net/http/pprof` at the top of the code.
+Make sure you have imported the `net/http/pprof` at the top of the code.
 
-The demo above is very simple, it sets up a server and handles the request with `handler`.The handler does three things:
+The demo above is very simple, it sets up a server and handles the request with the function, `handler`.The handler does three things:
 
 * ParseForm
 * doSomeThingOne
 * genSomeBytes
 
-all of them are aiming to simulate the reality.And then you can run `go run main.go` to start the server.
+all of them are aiming to simulate the reality.
+
+Then you can run `go run main.go` to start the server.
 
 ## Mock Requests
 
