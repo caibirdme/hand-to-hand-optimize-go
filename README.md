@@ -6,7 +6,7 @@ There're lots of powerful tools for optimizing golang program and some of those 
 
 *Follow the article and change the `main.go` yourself when needed*
 
-But first of all let's have a glimse of it:
+But first of all let's have a glimpse of it:
 
 ``` go
 package main
