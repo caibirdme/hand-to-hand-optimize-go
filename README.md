@@ -1,6 +1,6 @@
 # Tutorial for optimizing golang program
 
-Inspired By cch123's article [pprof 和火焰图](http://xargin.com/pprof-he-huo-yan-tu/)
+> Inspired By cch123's article [pprof 和火焰图](http://xargin.com/pprof-he-huo-yan-tu/)
 
 There're lots of powerful tools for optimizing golang program and some of those you may have already known but still not used it.So let's get start from a very simple demo,the `main.go`
 
