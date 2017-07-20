@@ -143,7 +143,7 @@ func doSomeThingOne(times int) {
 	}
 }
 ```
-Assume that the `doSomeThingOne` implements an O(N²) algorithim say, the bubble sort.In fact the bubble sort is not always a good choice.So could change `doSomeThingOne` and implement the merge sort(O(NlogN)):
+Assume that the `doSomeThingOne` implements an O(N²) algorithim say, the bubble sort.In fact the bubble sort is not always a good choice so we could change `doSomeThingOne` and implement it with the merge sort(O(NlogN)):
 ``` go
 func doSomeThingOne(times int) {
     var inner = int(math.Log2(float64(times)))
