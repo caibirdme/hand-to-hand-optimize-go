@@ -190,14 +190,18 @@ On OSX,just run:
 
 For other platforms see [here](https://github.com/ellson/graphviz)
 
-Also, in the go tool pprof interaction panel, input `web` instead of `top`, and it'll produce a svg file.Open it in the browser or anything you like and you'll see graph like this.
-![pprof6](img/pprof6.png)
-It's easy to understand right?
+After have the `graphviz` installed, in the go tool pprof interaction panel, input `web` instead of `top` now, and it'll produce a svg file.Open it in the browser or anything else you like and you'll see a graph like this.
 
-Follow the thickest arrow you can learn that most of time is spent on the function `genSomeBytes`
+![pprof6](img/pprof6.png)
+
+Very intuitive right?
+
+Now, follow the thickest arrow, you can learn from the graph that most of time is spent on the function `genSomeBytes`
+
 ![genSomeBytes](img/pprof7.png)
 
-So we can make it run faster!But let's look at it:
+So we should come up with an idea to make it run faster! But let's look at it firstly:
+
 ``` go
 func genSomeBytes() *bytes.Buffer {
 	var buff bytes.Buffer
@@ -208,7 +212,7 @@ func genSomeBytes() *bytes.Buffer {
 }
 ```
 
-From the graph above we can learn than most of time in `genSomeBytes` is spent on `rand.Intn`.In fact it's not easy to optimize package in stdlib,but the purpose of this article is to teach you how to find the bottleneck,so I just change the `rand.Intn` to a constant,but you should know they're not equivalent in fact.
+From the graph above we can learn than most of time in `genSomeBytes` is spent on `rand.Intn`.But to tell the truth it's not easy to optimize packages in stdlib,but the purpose of this article is to teach you how to find the bottleneck,so I just change the `rand.Intn` to a constant,but you should know they're not equivalent in fact.
 
 The `genSomeBytes` after modifying:
 
@@ -236,17 +240,15 @@ And something maybe like:
 
 You can see in the graph that most time spent on `genSomeBytes` is no longer how to generate bytes but something else.It's enough for us.
 
-And from `wrk`, we have a huge improvement! Surprise!
+And according to `wrk`, we have a huge improvement! Surprise!
 
 ![wrk_result](img/wrk0.png)
 
 ### go-torch
 
-[go-torch](https://github.com/uber/go-torch) sometimes is even more powerful for us to find the bottleneck,it's more intuitive!
+[go-torch](https://github.com/uber/go-torch) is a tool based on flame graph, sometimes it's even more powerful for us to find the bottleneck,it's more intuitive!
 
 #### Install go-torch
-
-`go-torch` is a tool based on flame graph
 
 * `go get -u github.com/uber/go-torch`
 * `git clone https://github.com/brendangregg/FlameGraph.git`
@@ -270,4 +272,6 @@ In the flame graph we can learn that `fmt.Println` which is used to print some d
 
 ### Conclusion
 
-In this article I just teach you how to use these tools to find the bottleneck in your system,can just cover the profile.Memory is also a very important aspect for optimizing your system.
+In this article I've just shown you how to use these tools to find the bottleneck in your system,and I just cover the profile. Memory is also a very important aspect for optimization.
+
+If you have problems welcome to open an issue
